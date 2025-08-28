@@ -32,28 +32,28 @@ export const delete_profissional_area_de_trabalho = async (id) => {
 
 // ===== PROFISSIONAL_DIA_DA_SEMANA ====================================
 
-export const create_profissional_dia_de_semana = async (Data) => {
+export const create_profissional_dia_da_semana = async (Data) => {
     return await Profissional_dia_da_semana.create(Data);
 }
-export const get_all_profissional_dia_de_semana = async () => {
+export const get_all_profissional_dia_da_semana = async () => {
     return await Profissional_dia_da_semana.findAll();
 }
-export const get_profissional_dia_de_semana_by_id = async (id) => {
+export const get_profissional_dia_da_semana_by_id = async (id) => {
     return await Profissional_dia_da_semana.findByPk(id);
 }
-export const update_profissional_dia_de_semana = async (id, updates) => {
-    const profissional_dia_de_semana = await Profissional_dia_da_semana.findByPk(id);
-    if (!profissional_dia_de_semana) {
+export const update_profissional_dia_da_semana = async (id, updates) => {
+    const profissional_dia_da_semana = await Profissional_dia_da_semana.findByPk(id);
+    if (!profissional_dia_da_semana) {
         return null;
     }
-    return await profissional_dia_de_semana.update(updates);
+    return await profissional_dia_da_semana.update(updates);
 }
-export const delete_profissional_dia_de_semana = async (id) => {
-    const profissional_dia_de_semana = await Profissional_dia_da_semana.findByPk(id);
-    if (!profissional_dia_de_semana) {
+export const delete_profissional_dia_da_semana = async (id) => {
+    const profissional_dia_da_semana = await Profissional_dia_da_semana.findByPk(id);
+    if (!profissional_dia_da_semana) {
         return null;
     }
-    await profissional_dia_de_semana.destroy();
+    await profissional_dia_da_semana.destroy();
     return true;
 }
 
