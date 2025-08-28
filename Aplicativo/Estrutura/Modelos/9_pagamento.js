@@ -3,7 +3,7 @@ import sequelize from "../../Configuracao/db.js";
 
 import Paciente from "./4_paciente.js";
 
-const Pagamento = sequelize.define('pagamento', {
+const Pagamento = sequelize.define('9_pagamento', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

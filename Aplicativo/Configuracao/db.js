@@ -1,6 +1,5 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
-import { lookup } from "dns";
 dotenv.config();
 
 const sequelize = new Sequelize(
@@ -19,7 +18,7 @@ export default sequelize;
 
 (async () => {
     try {
-        await sequelize.sync();
+        await sequelize.sync({force: true});
         console.log("Tabelas sicronizadas");
     }
     catch (error){

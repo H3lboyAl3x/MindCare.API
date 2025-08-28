@@ -4,7 +4,7 @@ import sequelize from "../../Configuracao/db.js";
 import Profissional from "./5_profissional.js";
 import Area_de_trabalho from "./7_area_de_trabalho.js"
 
-const Profissional_area_de_trabalho = sequelize.define('profissional_area_de_trabalho', {
+const Profissional_area_de_trabalho = sequelize.define('14_profissional_area_de_trabalho', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-const Area_de_trabalho = sequelize.define('area_de_trabalho', {
+const Area_de_trabalho = sequelize.define('7_area_de_trabalho', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

@@ -3,7 +3,7 @@ import sequelize from "../../Configuracao/db.js";
 
 import Usuario from "./1_usuario.js";
 
-const Administrador = sequelize.define('administrador', {
+const Administrador = sequelize.define('3_administrador', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

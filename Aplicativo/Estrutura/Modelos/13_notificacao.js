@@ -1,10 +1,10 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Usuario from "./6_disponibilidade.js";
+import Usuario from "./1_usuario.js";
 import Consulta from "./10_consulta.js"
 
-const Notificacao = sequelize.define('notificacao', {
+const Notificacao = sequelize.define('13_notificacao', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

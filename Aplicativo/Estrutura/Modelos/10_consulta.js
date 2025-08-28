@@ -4,7 +4,7 @@ import sequelize from "../../Configuracao/db.js";
 import Paciente from "./4_paciente.js";
 import Profissional from "./5_profissional.js";
 
-const Consulta = sequelize.define('consulta', {
+const Consulta = sequelize.define('10_consulta', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

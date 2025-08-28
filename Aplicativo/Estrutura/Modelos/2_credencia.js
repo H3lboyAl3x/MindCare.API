@@ -3,7 +3,7 @@ import sequelize from "../../Configuracao/db.js";
 
 import Usuario from "./1_usuario.js";
 
-const Credencia = sequelize.define('credencia', {
+const Credencia = sequelize.define('2_credencia', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

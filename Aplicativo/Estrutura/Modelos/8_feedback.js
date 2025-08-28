@@ -4,7 +4,7 @@ import sequelize from "../../Configuracao/db.js";
 import Profissional from "./5_profissional.js";
 import Consulta from "./10_consulta.js"
 
-const Feedback = sequelize.define('feedback', {
+const Feedback = sequelize.define('8_feedback', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

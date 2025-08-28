@@ -4,7 +4,7 @@ import sequelize from "../../Configuracao/db.js";
 import Profissional from "./5_profissional.js";
 import Dia_da_semana from "./6_dia_da_semana.js"
 
-const Profissional_dia_da_semana = sequelize.define('profissional_dia_da_semana', {
+const Profissional_dia_da_semana = sequelize.define('15_profissional_dia_da_semana', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

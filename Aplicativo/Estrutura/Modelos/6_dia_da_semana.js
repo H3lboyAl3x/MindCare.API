@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-const Dia_da_semana = sequelize.define('dia_da_semana', {
+const Dia_da_semana = sequelize.define('6_dia_da_semana', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

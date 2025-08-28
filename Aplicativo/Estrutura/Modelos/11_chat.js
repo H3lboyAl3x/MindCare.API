@@ -4,7 +4,7 @@ import sequelize from "../../Configuracao/db.js";
 import Paciente from "./4_paciente.js";
 import Profissional from "./5_profissional.js";
 
-const Chat = sequelize.define('chat', {
+const Chat = sequelize.define('11_chat', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

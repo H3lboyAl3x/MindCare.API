@@ -1,9 +1,9 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Usuario from "./6_disponibilidade.js";
+import Usuario from "./1_usuario.js";
 
-const Mensagem = sequelize.define('mensagem', {
+const Mensagem = sequelize.define('12_mensagem', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
