@@ -1,4 +1,4 @@
-import express from "express"; // <--- Faltava isso!
+import express from "express";
 import dotenv from "dotenv";
 import sequelize from "./Aplicativo/Configuracao/db.js";
 
@@ -12,7 +12,7 @@ import cors from "cors";
 import { ErrorHandler } from "./Aplicativo/Middlewares/ErrorHandler.js";
 import http from "http";
 
-dotenv.config(); // <--- precisa executar, senão não carrega o .env
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
