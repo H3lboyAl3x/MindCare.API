@@ -1,4 +1,5 @@
 import * as Servico from "../Interfaces/Servicos/5_extra_servico.js";
+import axios from "axios";
 
 // ===== PROFISSIONAL_AREA_DE_TRABALHO =================================
 export const get_all_profissional_area_de_trabalho = async (req, res) => {
