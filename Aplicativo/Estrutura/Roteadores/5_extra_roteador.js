@@ -25,6 +25,6 @@ roteador.put("/denuncia/:id", Controlador.update_denuncia);
 roteador.delete("/denuncia/:id", Controlador.delete_denuncia);
 
 //=====SMS===============================================================
-router.post("/enviar-sms", Controlador.enviarCodigo);
+roteador.post("/enviar-sms", Controlador.enviarCodigo);
 
 export default roteador;
