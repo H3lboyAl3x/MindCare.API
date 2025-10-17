@@ -165,4 +165,36 @@ export const delete_denuncia = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+}
+//======SMS========================================================
+//SMS_______________________________________
+export const enviarCodigo = async (req, res) => {
+  const { telefone, codigo } = req.body;
+
+  const data = JSON.stringify({
+    message: {
+      api_key_app: "prd638864bb03f405d48d42fb50a7",
+      phone_number: telefone,
+      message_body: `Seja bem-vindo a plataforma MindCare!\nAqui está o seu codigo de acesso pessoal: ${codigo} \nUse-o para acessar a plataforma.`
+    }
+  });
+
+  const config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'https://www.telcosms.co.ao/api/v2/send_message',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: data,
+  };
+
+  try {
+    const response = await axios(config);
+    console.log("Resposta da API:", response.data);
+    res.status(200).json({ success: true, response: response.data });
+  } catch (error) {
+    console.error("Erro ao enviar SMS:", error.response?.data || error.message);
+    res.status(500).json({ success: false, error: error.response?.data || error.message });
+  }
 };
