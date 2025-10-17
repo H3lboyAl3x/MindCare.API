@@ -174,7 +174,7 @@ export const enviarCodigo = async (req, res) => {
 
   const data = JSON.stringify({
     message: {
-      api_key_app: "prd638864bb03f405d48d42fb50a7",
+      api_key_app: "prdf48b5718d7db6525e017dacb5e",
       phone_number: telefone,
       message_body: `Seja bem-vindo a plataforma MindCare!\nAqui está o seu codigo de acesso pessoal: ${codigo} \nUse-o para acessar a plataforma.`
     }
