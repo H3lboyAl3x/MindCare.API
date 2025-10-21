@@ -170,32 +170,39 @@ export const delete_denuncia = async (req, res) => {
 //======SMS========================================================
 //SMS_______________________________________
 export const enviarCodigo = async (req, res) => {
-  const { telefone, codigo } = req.body;
-
-  const data = JSON.stringify({
-    message: {
-      api_key_app: "prdf48b5718d7db6525e017dacb5e",
-      phone_number: telefone,
-      message_body: `Seja bem-vindo a plataforma MindCare!\nAqui está o seu codigo de acesso pessoal: ${codigo} \nUse-o para acessar a plataforma.`
-    }
-  });
-
-  const config = {
-    method: 'post',
-    maxBodyLength: Infinity,
-    url: 'https://www.telcosms.co.ao/api/v2/send_message',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: data,
-  };
-
   try {
-    const response = await axios(config);
-    console.log("Resposta da API:", response.data);
-    res.status(200).json({ success: true, response: response.data });
+    const { telefone, codigo } = req.body;
+
+    const response = await axios.post(
+      "https://app-utalk.umbler.com/api/v1/messages/simplified/",
+      {
+        toPhone: telefone,
+        fromPhone: "+244953358562", // seu número configurado na Umbler Talk
+        organizationId: "aPc_le80iesrY_0P", // seu ID de organização
+        message: `Seu código de verificação é: ${codigo}`,
+        file: null,
+        skipReassign: false,
+        contactName: "MindCare"
+      },
+      {
+        headers: {
+          Authorization:
+            "Bearer MindCare-2025-10-21-2093-11-08--82B6678121D578ADC6CBB887959930B3F3463DA7950FF4207CAE7E4E5377C1B5",
+          "Content-Type": "application/json"
+        }
+      }
+    );
+
+    return res.json({
+      success: true,
+      message: "Código enviado com sucesso!",
+      talkResponse: response.data
+    });
   } catch (error) {
-    console.error("Erro ao enviar SMS:", error.response?.data || error.message);
-    res.status(500).json({ success: false, error: error.response?.data || error.message });
+    console.error("Erro ao enviar código:", error.response?.data || error);
+    return res.status(500).json({
+      success: false,
+      error: error.response?.data || "Erro desconhecido ao enviar WhatsApp"
+    });
   }
 };
