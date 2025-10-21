@@ -171,15 +171,15 @@ export const delete_denuncia = async (req, res) => {
 //SMS_______________________________________
 export const enviarCodigo = async (req, res) => {
   try {
-    const { telefone, codigo } = req.body;
+    const { telefone, codigo, nome } = req.body;
 
     const response = await axios.post(
       "https://app-utalk.umbler.com/api/v1/messages/simplified/",
       {
         toPhone: telefone,
-        fromPhone: "+244953358562", // seu número configurado na Umbler Talk
-        organizationId: "aPc_le80iesrY_0P", // seu ID de organização
-        message: `Seu código de verificação é: ${codigo}`,
+        fromPhone: "+244953358562",
+        organizationId: "aPc_le80iesrY_0P",
+        message: `MindCare: seu código de confirmação é ${codigo}. \nUse este código para concluir o cadastro no aplicativo. \nNão compartilhe com ninguém.`,
         file: null,
         skipReassign: false,
         contactName: "MindCare"
