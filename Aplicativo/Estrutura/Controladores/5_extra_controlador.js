@@ -182,7 +182,7 @@ export const enviarCodigo = async (req, res) => {
         message: `MindCare: seu código de confirmação é ${codigo}. \nUse este código para concluir o cadastro no aplicativo. \nNão compartilhe com ninguém.`,
         file: null,
         skipReassign: false,
-        contactName: "MindCare"
+        contactName: nome
       },
       {
         headers: {
