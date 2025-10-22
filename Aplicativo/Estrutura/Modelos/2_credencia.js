@@ -16,10 +16,6 @@ const Credencia = sequelize.define('2_credencia', {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
     senha: {
         type: DataTypes.STRING,
         allowNull: false,
