@@ -167,6 +167,61 @@ export const delete_denuncia = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
+// ===== PACIENTE_PROFISSIONAL ========================================================
+export const get_all_paciente_profissional = async (req, res) => {
+    try {
+        const paciente_profissional = await Servico.get_all_paciente_profissional();
+        res.status(200).json(paciente_profissional);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+export const create_paciente_profissional = async (req, res) => {
+    try {
+        const newpaciente_profissional = await Servico.create_paciente_profissional(req.body);
+        res.status(201).json(newpaciente_profissional);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+export const get_paciente_profissional_by_id = async (req, res) => {
+    try {
+        const paciente_profissional = await Servico.get_paciente_profissional_by_id(req.params.id);
+        if (!paciente_profissional) {
+            return res.status(404).json({ message: 'paciente_profissional não encontrada com id: ' + req.params.id });
+        }
+        res.status(200).json(paciente_profissional);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+export const update_paciente_profissional = async (req, res) => {
+    try {
+        const updatedpaciente_profissional = await Servico.update_paciente_profissional(req.params.id, req.body);
+        if (!updatedpaciente_profissional) {
+            return res.status(404).json({ message: 'paciente_profissional não encontrada' });
+        }
+        res.status(200).json(updatedpaciente_profissional);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+export const delete_paciente_profissional = async (req, res) => {
+    try {
+        const deleted = await Servico.delete_paciente_profissional(req.params.id);
+        if (!deleted) {
+            return res.status(404).json({ message: 'paciente_profissional não encontrada' });
+        }
+        res.status(204).json();
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
 //======SMS========================================================
 //SMS_______________________________________
 export const enviarCodigo = async (req, res) => {

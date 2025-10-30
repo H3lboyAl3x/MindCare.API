@@ -24,6 +24,13 @@ roteador.get("/denuncia/:id", Controlador.get_denuncia_by_id);
 roteador.put("/denuncia/:id", Controlador.update_denuncia);
 roteador.delete("/denuncia/:id", Controlador.delete_denuncia);
 
+// ===== PACIENTE_PROFISSIONAL ======================================================
+roteador.get("/paciente_profissional", Controlador.get_all_paciente_profissional);
+roteador.post("/paciente_profissional", Controlador.create_paciente_profissional);
+roteador.get("/paciente_profissional/:id", Controlador.get_paciente_profissional_by_id);
+roteador.put("/paciente_profissional/:id", Controlador.update_paciente_profissional);
+roteador.delete("/paciente_profissional/:id", Controlador.delete_paciente_profissional);
+
 //=====SMS===============================================================
 roteador.post("/enviar-sms", Controlador.enviarCodigo);
 

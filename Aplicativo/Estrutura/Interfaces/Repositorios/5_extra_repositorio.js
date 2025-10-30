@@ -1,6 +1,7 @@
 import Profissional_area_de_trabalho from "../../Modelos/14_profissional_are_de_trabalho.js";
 import Profissional_dia_da_semana from "../../Modelos/15_Profissional_dia_da_semana.js";
 import Denuncia from "../../Modelos/16_denuncia.js";
+import Paciente_profissional from "../../Modelos/17_Paciente_profissional.js";
 
 // ===== PROFISSIONAL_AREA_DE_TRABALHO ===================================
 
@@ -82,5 +83,32 @@ export const delete_denuncia = async (id) => {
         return null;
     }
     await denuncia.destroy();
+    return true;
+}
+
+// ===== PACIENTE_PROFISSIONAL ===================================
+
+export const create_paciente_profissional = async (Data) => {
+    return await Paciente_profissional.create(Data);
+}
+export const get_all_paciente_profissional = async () => {
+    return await Paciente_profissional.findAll();
+}
+export const get_paciente_profissional_by_id = async (id) => {
+    return await Paciente_profissional.findByPk(id);
+}
+export const update_paciente_profissional = async (id, updates) => {
+    const paciente_profissional = await Paciente_profissional.findByPk(id);
+    if (!paciente_profissional) {
+        return null;
+    }
+    return await paciente_profissional.update(updates);
+}
+export const delete_paciente_profissional = async (id) => {
+    const paciente_profissional = await Paciente_profissional.findByPk(id);
+    if (!paciente_profissional) {
+        return null;
+    }
+    await paciente_profissional.destroy();
     return true;
 }

@@ -64,3 +64,24 @@ export const update_denuncia = async (id, updates) => {
 export const delete_denuncia = async (id) => {
     return await Repositorio.delete_denuncia(id);
 };
+
+// ===== PACIENTE_PROFISSIONAL ========================================================
+export const create_paciente_profissional = async (data) => {
+    return await Repositorio.create_paciente_profissional(data);
+};
+
+export const get_all_paciente_profissional = async () => {
+    return await Repositorio.get_all_paciente_profissional();
+};
+
+export const get_paciente_profissional_by_id = async (id) => {
+    return await Repositorio.get_paciente_profissional_by_id(id);
+};
+
+export const update_paciente_profissional = async (id, updates) => {
+    return await Repositorio.update_paciente_profissional(id, updates);
+};
+
+export const delete_paciente_profissional = async (id) => {
+    return await Repositorio.delete_paciente_profissional(id);
+};
