@@ -24,6 +24,7 @@ export default sequelize;
 
 (async () => {
     try {
+        await sequelize.sync({force: true});
         console.log("Tabelas sicronizadas");
     }
     catch (error){
