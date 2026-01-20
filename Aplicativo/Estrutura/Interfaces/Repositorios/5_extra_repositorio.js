@@ -1,60 +1,60 @@
-import Profissional_area_de_trabalho from "../../Modelos/14_profissional_are_de_trabalho.js";
-import Profissional_dia_da_semana from "../../Modelos/15_Profissional_dia_da_semana.js";
+import Professional_area_de_trabalho from "../../Modelos/14_Professional_are_de_trabalho.js";
+import Professional_dia_da_semana from "../../Modelos/15_Professional_dia_da_semana.js";
 import Denuncia from "../../Modelos/16_denuncia.js";
-import Paciente_profissional from "../../Modelos/17_Paciente_profissional.js";
+import Patient_Professional from "../../Modelos/17_Patient_Professional.js";
 
-// ===== PROFISSIONAL_AREA_DE_TRABALHO ===================================
+// ===== Professional_AREA_DE_TRABALHO ===================================
 
-export const create_profissional_area_de_trabalho = async (Data) => {
-    return await Profissional_area_de_trabalho.create(Data);
+export const create_Professional_area_de_trabalho = async (Data) => {
+    return await Professional_area_de_trabalho.create(Data);
 }
-export const get_all_profissional_area_de_trabalho = async () => {
-    return await Profissional_area_de_trabalho.findAll();
+export const get_all_Professional_area_de_trabalho = async () => {
+    return await Professional_area_de_trabalho.findAll();
 }
-export const get_profissional_area_de_trabalho_by_id = async (id) => {
-    return await Profissional_area_de_trabalho.findByPk(id);
+export const get_Professional_area_de_trabalho_by_id = async (id) => {
+    return await Professional_area_de_trabalho.findByPk(id);
 }
-export const update_profissional_area_de_trabalho = async (id, updates) => {
-    const profissional_area_de_trabalho = await Profissional_area_de_trabalho.findByPk(id);
-    if (!profissional_area_de_trabalho) {
+export const update_Professional_area_de_trabalho = async (id, updates) => {
+    const Professional_area_de_trabalho = await Professional_area_de_trabalho.findByPk(id);
+    if (!Professional_area_de_trabalho) {
         return null;
     }
-    return await profissional_area_de_trabalho.update(updates);
+    return await Professional_area_de_trabalho.update(updates);
 }
-export const delete_profissional_area_de_trabalho = async (id) => {
-    const profissional_area_de_trabalho = await Profissional_area_de_trabalho.findByPk(id);
-    if (!profissional_area_de_trabalho) {
+export const delete_Professional_area_de_trabalho = async (id) => {
+    const Professional_area_de_trabalho = await Professional_area_de_trabalho.findByPk(id);
+    if (!Professional_area_de_trabalho) {
         return null;
     }
-    await profissional_area_de_trabalho.destroy();
+    await Professional_area_de_trabalho.destroy();
     return true;
 }
 
 
-// ===== PROFISSIONAL_DIA_DA_SEMANA ====================================
+// ===== Professional_DIA_DA_SEMANA ====================================
 
-export const create_profissional_dia_da_semana = async (Data) => {
-    return await Profissional_dia_da_semana.create(Data);
+export const create_Professional_dia_da_semana = async (Data) => {
+    return await Professional_dia_da_semana.create(Data);
 }
-export const get_all_profissional_dia_da_semana = async () => {
-    return await Profissional_dia_da_semana.findAll();
+export const get_all_Professional_dia_da_semana = async () => {
+    return await Professional_dia_da_semana.findAll();
 }
-export const get_profissional_dia_da_semana_by_id = async (id) => {
-    return await Profissional_dia_da_semana.findByPk(id);
+export const get_Professional_dia_da_semana_by_id = async (id) => {
+    return await Professional_dia_da_semana.findByPk(id);
 }
-export const update_profissional_dia_da_semana = async (id, updates) => {
-    const profissional_dia_da_semana = await Profissional_dia_da_semana.findByPk(id);
-    if (!profissional_dia_da_semana) {
+export const update_Professional_dia_da_semana = async (id, updates) => {
+    const Professional_dia_da_semana = await Professional_dia_da_semana.findByPk(id);
+    if (!Professional_dia_da_semana) {
         return null;
     }
-    return await profissional_dia_da_semana.update(updates);
+    return await Professional_dia_da_semana.update(updates);
 }
-export const delete_profissional_dia_da_semana = async (id) => {
-    const profissional_dia_da_semana = await Profissional_dia_da_semana.findByPk(id);
-    if (!profissional_dia_da_semana) {
+export const delete_Professional_dia_da_semana = async (id) => {
+    const Professional_dia_da_semana = await Professional_dia_da_semana.findByPk(id);
+    if (!Professional_dia_da_semana) {
         return null;
     }
-    await profissional_dia_da_semana.destroy();
+    await Professional_dia_da_semana.destroy();
     return true;
 }
 
@@ -86,29 +86,29 @@ export const delete_denuncia = async (id) => {
     return true;
 }
 
-// ===== PACIENTE_PROFISSIONAL ===================================
+// ===== Patient_Professional ===================================
 
-export const create_paciente_profissional = async (Data) => {
-    return await Paciente_profissional.create(Data);
+export const create_Patient_Professional = async (Data) => {
+    return await Patient_Professional.create(Data);
 }
-export const get_all_paciente_profissional = async () => {
-    return await Paciente_profissional.findAll();
+export const get_all_Patient_Professional = async () => {
+    return await Patient_Professional.findAll();
 }
-export const get_paciente_profissional_by_id = async (id) => {
-    return await Paciente_profissional.findByPk(id);
+export const get_Patient_Professional_by_id = async (id) => {
+    return await Patient_Professional.findByPk(id);
 }
-export const update_paciente_profissional = async (id, updates) => {
-    const paciente_profissional = await Paciente_profissional.findByPk(id);
-    if (!paciente_profissional) {
+export const update_Patient_Professional = async (id, updates) => {
+    const Patient_Professional = await Patient_Professional.findByPk(id);
+    if (!Patient_Professional) {
         return null;
     }
-    return await paciente_profissional.update(updates);
+    return await Patient_Professional.update(updates);
 }
-export const delete_paciente_profissional = async (id) => {
-    const paciente_profissional = await Paciente_profissional.findByPk(id);
-    if (!paciente_profissional) {
+export const delete_Patient_Professional = async (id) => {
+    const Patient_Professional = await Patient_Professional.findByPk(id);
+    if (!Patient_Professional) {
         return null;
     }
-    await paciente_profissional.destroy();
+    await Patient_Professional.destroy();
     return true;
 }

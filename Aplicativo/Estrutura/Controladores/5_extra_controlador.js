@@ -1,30 +1,30 @@
 import * as Servico from "../Interfaces/Servicos/5_extra_servico.js";
 import axios from "axios";
 
-// ===== PROFISSIONAL_AREA_DE_TRABALHO =================================
-export const get_all_profissional_area_de_trabalho = async (req, res) => {
+// ===== Professional_AREA_DE_TRABALHO =================================
+export const get_all_Professional_area_de_trabalho = async (req, res) => {
     try {
-        const items = await Servico.get_all_profissional_area_de_trabalho();
+        const items = await Servico.get_all_Professional_area_de_trabalho();
         res.status(200).json(items);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-export const create_profissional_area_de_trabalho = async (req, res) => {
+export const create_Professional_area_de_trabalho = async (req, res) => {
     try {
-        const newItem = await Servico.create_profissional_area_de_trabalho(req.body);
+        const newItem = await Servico.create_Professional_area_de_trabalho(req.body);
         res.status(201).json(newItem);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-export const get_profissional_area_de_trabalho_by_id = async (req, res) => {
+export const get_Professional_area_de_trabalho_by_id = async (req, res) => {
     try {
-        const item = await Servico.get_profissional_area_de_trabalho_by_id(req.params.id);
+        const item = await Servico.get_Professional_area_de_trabalho_by_id(req.params.id);
         if (!item) {
-            return res.status(404).json({ message: 'Profissional_area_de_trabalho não encontrado com id: ' + req.params.id });
+            return res.status(404).json({ message: 'Professional_area_de_trabalho não encontrado com id: ' + req.params.id });
         }
         res.status(200).json(item);
     } catch (error) {
@@ -32,11 +32,11 @@ export const get_profissional_area_de_trabalho_by_id = async (req, res) => {
     }
 };
 
-export const update_profissional_area_de_trabalho = async (req, res) => {
+export const update_Professional_area_de_trabalho = async (req, res) => {
     try {
-        const updatedItem = await Servico.update_profissional_area_de_trabalho(req.params.id, req.body);
+        const updatedItem = await Servico.update_Professional_area_de_trabalho(req.params.id, req.body);
         if (!updatedItem) {
-            return res.status(404).json({ message: 'Profissional_area_de_trabalho não encontrado' });
+            return res.status(404).json({ message: 'Professional_area_de_trabalho não encontrado' });
         }
         res.status(200).json(updatedItem);
     } catch (error) {
@@ -44,11 +44,11 @@ export const update_profissional_area_de_trabalho = async (req, res) => {
     }
 };
 
-export const delete_profissional_area_de_trabalho = async (req, res) => {
+export const delete_Professional_area_de_trabalho = async (req, res) => {
     try {
-        const deleted = await Servico.delete_profissional_area_de_trabalho(req.params.id);
+        const deleted = await Servico.delete_Professional_area_de_trabalho(req.params.id);
         if (!deleted) {
-            return res.status(404).json({ message: 'Profissional_area_de_trabalho não encontrado' });
+            return res.status(404).json({ message: 'Professional_area_de_trabalho não encontrado' });
         }
         res.status(204).json();
     } catch (error) {
@@ -57,30 +57,30 @@ export const delete_profissional_area_de_trabalho = async (req, res) => {
 };
 
 
-// ===== PROFISSIONAL_DIA_DA_SEMANA ===================================
-export const get_all_profissional_dia_da_semana = async (req, res) => {
+// ===== Professional_DIA_DA_SEMANA ===================================
+export const get_all_Professional_dia_da_semana = async (req, res) => {
     try {
-        const items = await Servico.get_all_profissional_dia_da_semana();
+        const items = await Servico.get_all_Professional_dia_da_semana();
         res.status(200).json(items);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-export const create_profissional_dia_da_semana = async (req, res) => {
+export const create_Professional_dia_da_semana = async (req, res) => {
     try {
-        const newItem = await Servico.create_profissional_dia_da_semana(req.body);
+        const newItem = await Servico.create_Professional_dia_da_semana(req.body);
         res.status(201).json(newItem);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-export const get_profissional_dia_da_semana_by_id = async (req, res) => {
+export const get_Professional_dia_da_semana_by_id = async (req, res) => {
     try {
-        const item = await Servico.get_profissional_dia_da_semana_by_id(req.params.id);
+        const item = await Servico.get_Professional_dia_da_semana_by_id(req.params.id);
         if (!item) {
-            return res.status(404).json({ message: 'Profissional_dia_da_semana não encontrado com id: ' + req.params.id });
+            return res.status(404).json({ message: 'Professional_dia_da_semana não encontrado com id: ' + req.params.id });
         }
         res.status(200).json(item);
     } catch (error) {
@@ -88,11 +88,11 @@ export const get_profissional_dia_da_semana_by_id = async (req, res) => {
     }
 };
 
-export const update_profissional_dia_da_semana = async (req, res) => {
+export const update_Professional_dia_da_semana = async (req, res) => {
     try {
-        const updatedItem = await Servico.update_profissional_dia_da_semana(req.params.id, req.body);
+        const updatedItem = await Servico.update_Professional_dia_da_semana(req.params.id, req.body);
         if (!updatedItem) {
-            return res.status(404).json({ message: 'Profissional_dia_da_semana não encontrado' });
+            return res.status(404).json({ message: 'Professional_dia_da_semana não encontrado' });
         }
         res.status(200).json(updatedItem);
     } catch (error) {
@@ -100,11 +100,11 @@ export const update_profissional_dia_da_semana = async (req, res) => {
     }
 };
 
-export const delete_profissional_dia_da_semana = async (req, res) => {
+export const delete_Professional_dia_da_semana = async (req, res) => {
     try {
-        const deleted = await Servico.delete_profissional_dia_da_semana(req.params.id);
+        const deleted = await Servico.delete_Professional_dia_da_semana(req.params.id);
         if (!deleted) {
-            return res.status(404).json({ message: 'Profissional_dia_da_semana não encontrado' });
+            return res.status(404).json({ message: 'Professional_dia_da_semana não encontrado' });
         }
         res.status(204).json();
     } catch (error) {
@@ -167,54 +167,54 @@ export const delete_denuncia = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
-// ===== PACIENTE_PROFISSIONAL ========================================================
-export const get_all_paciente_profissional = async (req, res) => {
+// ===== Patient_Professional ========================================================
+export const get_all_Patient_Professional = async (req, res) => {
     try {
-        const paciente_profissional = await Servico.get_all_paciente_profissional();
-        res.status(200).json(paciente_profissional);
+        const Patient_Professional = await Servico.get_all_Patient_Professional();
+        res.status(200).json(Patient_Professional);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-export const create_paciente_profissional = async (req, res) => {
+export const create_Patient_Professional = async (req, res) => {
     try {
-        const newpaciente_profissional = await Servico.create_paciente_profissional(req.body);
-        res.status(201).json(newpaciente_profissional);
+        const newPatient_Professional = await Servico.create_Patient_Professional(req.body);
+        res.status(201).json(newPatient_Professional);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-export const get_paciente_profissional_by_id = async (req, res) => {
+export const get_Patient_Professional_by_id = async (req, res) => {
     try {
-        const paciente_profissional = await Servico.get_paciente_profissional_by_id(req.params.id);
-        if (!paciente_profissional) {
-            return res.status(404).json({ message: 'paciente_profissional não encontrada com id: ' + req.params.id });
+        const Patient_Professional = await Servico.get_Patient_Professional_by_id(req.params.id);
+        if (!Patient_Professional) {
+            return res.status(404).json({ message: 'Patient_Professional não encontrada com id: ' + req.params.id });
         }
-        res.status(200).json(paciente_profissional);
+        res.status(200).json(Patient_Professional);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
 
-export const update_paciente_profissional = async (req, res) => {
+export const update_Patient_Professional = async (req, res) => {
     try {
-        const updatedpaciente_profissional = await Servico.update_paciente_profissional(req.params.id, req.body);
-        if (!updatedpaciente_profissional) {
-            return res.status(404).json({ message: 'paciente_profissional não encontrada' });
+        const updatedPatient_Professional = await Servico.update_Patient_Professional(req.params.id, req.body);
+        if (!updatedPatient_Professional) {
+            return res.status(404).json({ message: 'Patient_Professional não encontrada' });
         }
-        res.status(200).json(updatedpaciente_profissional);
+        res.status(200).json(updatedPatient_Professional);
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
 };
 
-export const delete_paciente_profissional = async (req, res) => {
+export const delete_Patient_Professional = async (req, res) => {
     try {
-        const deleted = await Servico.delete_paciente_profissional(req.params.id);
+        const deleted = await Servico.delete_Patient_Professional(req.params.id);
         if (!deleted) {
-            return res.status(404).json({ message: 'paciente_profissional não encontrada' });
+            return res.status(404).json({ message: 'Patient_Professional não encontrada' });
         }
         res.status(204).json();
     } catch (error) {
@@ -226,18 +226,18 @@ export const delete_paciente_profissional = async (req, res) => {
 //SMS_______________________________________
 export const enviarCodigo = async (req, res) => {
   try {
-    const { telefone, codigo, nome } = req.body;
+    const { number, codigo, name } = req.body;
 
     const response = await axios.post(
       "https://app-utalk.umbler.com/api/v1/messages/simplified/",
       {
-        toPhone: telefone,
+        toPhone: number,
         fromPhone: "+244953358562",
         organizationId: "aPc_le80iesrY_0P",
         message: `MindCare: seu código de confirmação é ${codigo}. \nUse este código para concluir o cadastro no aplicativo. \nNão compartilhe com ninguém.`,
         file: null,
         skipReassign: false,
-        contactName: nome
+        contactName: name
       },
       {
         headers: {

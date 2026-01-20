@@ -1,28 +1,37 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-const Usuario = sequelize.define('1_usuario', {
+import Patient from "./4_patient.js";
+
+const Payment = sequelize.define('9_payment', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    nome: {
-        type: DataTypes.STRING,
+    value: {
+        type: DataTypes.DECIMAL,
         allowNull: true,
     },
-    data_de_nascimento: {
-        type: DataTypes.DATE,
+    session: {
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
-    genero: {
+    type: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    estado: {
+    status: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
+    },
+    id_patient: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Patient,
+            key: "id",
+        }
     }
 });
 
-export default Usuario;
+export default Payment;

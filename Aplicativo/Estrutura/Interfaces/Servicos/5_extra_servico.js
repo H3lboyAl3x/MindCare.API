@@ -1,46 +1,46 @@
 import * as Repositorio from "../Repositorios/5_extra_repositorio.js";
 
-// ===== PROFISSIONAL_AREA_DE_TRABALHO ===================================
-export const create_profissional_area_de_trabalho = async (data) => {
-    return await Repositorio.create_profissional_area_de_trabalho(data);
+// ===== Professional_AREA_DE_TRABALHO ===================================
+export const create_Professional_area_de_trabalho = async (data) => {
+    return await Repositorio.create_Professional_area_de_trabalho(data);
 };
 
-export const get_all_profissional_area_de_trabalho = async () => {
-    return await Repositorio.get_all_profissional_area_de_trabalho();
+export const get_all_Professional_area_de_trabalho = async () => {
+    return await Repositorio.get_all_Professional_area_de_trabalho();
 };
 
-export const get_profissional_area_de_trabalho_by_id = async (id) => {
-    return await Repositorio.get_profissional_area_de_trabalho_by_id(id);
+export const get_Professional_area_de_trabalho_by_id = async (id) => {
+    return await Repositorio.get_Professional_area_de_trabalho_by_id(id);
 };
 
-export const update_profissional_area_de_trabalho = async (id, updates) => {
-    return await Repositorio.update_profissional_area_de_trabalho(id, updates);
+export const update_Professional_area_de_trabalho = async (id, updates) => {
+    return await Repositorio.update_Professional_area_de_trabalho(id, updates);
 };
 
-export const delete_profissional_area_de_trabalho = async (id) => {
-    return await Repositorio.delete_profissional_area_de_trabalho(id);
+export const delete_Professional_area_de_trabalho = async (id) => {
+    return await Repositorio.delete_Professional_area_de_trabalho(id);
 };
 
 
-// ===== PROFISSIONAL_DIA_DA_SEMANA ====================================
-export const create_profissional_dia_da_semana = async (data) => {
-    return await Repositorio.create_profissional_dia_da_semana(data);
+// ===== Professional_DIA_DA_SEMANA ====================================
+export const create_Professional_dia_da_semana = async (data) => {
+    return await Repositorio.create_Professional_dia_da_semana(data);
 };
 
-export const get_all_profissional_dia_da_semana = async () => {
-    return await Repositorio.get_all_profissional_dia_da_semana();
+export const get_all_Professional_dia_da_semana = async () => {
+    return await Repositorio.get_all_Professional_dia_da_semana();
 };
 
-export const get_profissional_dia_da_semana_by_id = async (id) => {
-    return await Repositorio.get_profissional_dia_da_semana_by_id(id);
+export const get_Professional_dia_da_semana_by_id = async (id) => {
+    return await Repositorio.get_Professional_dia_da_semana_by_id(id);
 };
 
-export const update_profissional_dia_da_semana = async (id, updates) => {
-    return await Repositorio.update_profissional_dia_da_semana(id, updates);
+export const update_Professional_dia_da_semana = async (id, updates) => {
+    return await Repositorio.update_Professional_dia_da_semana(id, updates);
 };
 
-export const delete_profissional_dia_da_semana = async (id) => {
-    return await Repositorio.delete_profissional_dia_da_semana(id);
+export const delete_Professional_dia_da_semana = async (id) => {
+    return await Repositorio.delete_Professional_dia_da_semana(id);
 };
 
 
@@ -65,23 +65,23 @@ export const delete_denuncia = async (id) => {
     return await Repositorio.delete_denuncia(id);
 };
 
-// ===== PACIENTE_PROFISSIONAL ========================================================
-export const create_paciente_profissional = async (data) => {
-    return await Repositorio.create_paciente_profissional(data);
+// ===== Patient_Professional ========================================================
+export const create_Patient_Professional = async (data) => {
+    return await Repositorio.create_Patient_Professional(data);
 };
 
-export const get_all_paciente_profissional = async () => {
-    return await Repositorio.get_all_paciente_profissional();
+export const get_all_Patient_Professional = async () => {
+    return await Repositorio.get_all_Patient_Professional();
 };
 
-export const get_paciente_profissional_by_id = async (id) => {
-    return await Repositorio.get_paciente_profissional_by_id(id);
+export const get_Patient_Professional_by_id = async (id) => {
+    return await Repositorio.get_Patient_Professional_by_id(id);
 };
 
-export const update_paciente_profissional = async (id, updates) => {
-    return await Repositorio.update_paciente_profissional(id, updates);
+export const update_Patient_Professional = async (id, updates) => {
+    return await Repositorio.update_Patient_Professional(id, updates);
 };
 
-export const delete_paciente_profissional = async (id) => {
-    return await Repositorio.delete_paciente_profissional(id);
+export const delete_Patient_Professional = async (id) => {
+    return await Repositorio.delete_Patient_Professional(id);
 };

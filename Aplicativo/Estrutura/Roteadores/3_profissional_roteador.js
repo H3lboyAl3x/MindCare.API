@@ -1,5 +1,5 @@
 import express from "express";
-import * as Controlador from "../Controladores/3_profissional_controlador.js";
+import * as Controlador from "../Controladores/3_Professional_controlador.js";
 
 const roteador = express.Router();
 

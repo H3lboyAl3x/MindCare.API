@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Usuario from "./1_usuario.js";
+import User from "./1_User.js";
 
 const Mensagem = sequelize.define('12_mensagem', {
     id: {
@@ -21,21 +21,21 @@ const Mensagem = sequelize.define('12_mensagem', {
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    estado: {
+    status: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
     },
     id_remetente: {
         type: DataTypes.INTEGER,
         references: {
-            model: Usuario,
+            model: User,
             key: "id",
         }
     },
     id_destinatoria: {
         type: DataTypes.INTEGER,
         references: {
-            model: Usuario,
+            model: User,
             key: "id",
         }
     }

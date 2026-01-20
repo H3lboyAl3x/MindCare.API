@@ -1,4 +1,4 @@
-import * as Servico from "../Interfaces/Servicos/2_paciente_servico.js";
+import * as Servico from "../Interfaces/Servicos/2_Patient_servico.js";
 
 // ===== PAGAMENTO =======================================================
 export const get_all_pagamento = async (req, res) => {

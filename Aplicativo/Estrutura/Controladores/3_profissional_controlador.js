@@ -1,4 +1,4 @@
-import * as Servico from "../Interfaces/Servicos/3_profissional_servico.js";
+import * as Servico from "../Interfaces/Servicos/3_Professional_servico.js";
 
 // ===== DIA_DA_SEMANA ===================================================
 export const get_all_dia_da_semana = async (req, res) => {

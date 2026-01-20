@@ -1,20 +1,20 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Paciente from "./4_paciente.js";
-import Profissional from "./5_profissional.js";
+import Patient from "./4_patient.js";
+import Professional from "./5_professional.js";
 
-const Consulta = sequelize.define('10_consulta', {
+const Consultation = sequelize.define('10_consultation', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    data: {
+    date: {
         type: DataTypes.DATE,
         allowNull: true,
     },
-    hora: {
+    hour: {
         type: DataTypes.TIME,
         allowNull: false,
     },
@@ -22,24 +22,24 @@ const Consulta = sequelize.define('10_consulta', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    estado: {
+    status: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    id_paciente: {
+    id_patient: {
         type: DataTypes.INTEGER,
         references: {
-            model: Paciente,
+            model: Patient,
             key: "id",
         }
     },
-    id_profissional: {
+    id_professional: {
         type: DataTypes.INTEGER,
         references: {
-            model: Profissional,
+            model: Professional,
             key: "id",
         }
     }
 });
 
-export default Consulta;
+export default Consultation;

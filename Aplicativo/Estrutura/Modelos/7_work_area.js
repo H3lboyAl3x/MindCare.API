@@ -1,16 +1,16 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-const Dia_da_semana = sequelize.define('6_dia_da_semana', {
+const Work_area = sequelize.define('7_work_area', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    dia: {
+    area: {
         type: DataTypes.STRING,
         allowNull: true,
     },
 });
 
-export default Dia_da_semana;
+export default Work_area;

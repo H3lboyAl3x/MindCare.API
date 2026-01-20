@@ -1,29 +1,25 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Usuario from "./1_usuario.js";
+import User from "./1_user.js";
 
-const Profissional = sequelize.define('5_profissional', {
+const Credential = sequelize.define('2_credential', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         references: {
-            model: Usuario,
+            model: User,
             key: 'id',
         }
     },
-    nif: {
+    number: {
         type: DataTypes.STRING,
         allowNull: true,
     },
-    experiencia: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    estrela: {
-        type: DataTypes.DECIMAL,
+    pass: {
+        type: DataTypes.STRING,
         allowNull: false,
     },
 });
 
-export default Profissional;
+export default Credential;

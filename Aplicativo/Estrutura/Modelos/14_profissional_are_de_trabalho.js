@@ -1,19 +1,19 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Profissional from "./5_profissional.js";
+import Professional from "./5_Professional.js";
 import Area_de_trabalho from "./7_area_de_trabalho.js"
 
-const Profissional_area_de_trabalho = sequelize.define('14_profissional_area_de_trabalho', {
+const Professional_area_de_trabalho = sequelize.define('14_Professional_area_de_trabalho', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    id_profissional: {
+    id_Professional: {
         type: DataTypes.INTEGER,
         references: {
-            model: Profissional,
+            model: Professional,
             key: "id",
         }
     },
@@ -26,4 +26,4 @@ const Profissional_area_de_trabalho = sequelize.define('14_profissional_area_de_
     }
 });
 
-export default Profissional_area_de_trabalho;
+export default Professional_area_de_trabalho;

@@ -1,29 +1,29 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Paciente from "./4_paciente.js";
-import Profissional from "./5_profissional.js";
+import Patient from "./4_Patient.js";
+import Professional from "./5_Professional.js";
 
-const Paciente_profissional = sequelize.define('16_paciente_profissional', {
+const Patient_Professional = sequelize.define('16_Patient_Professional', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    id_paciente: {
+    id_Patient: {
         type: DataTypes.INTEGER,
         references: {
-            model: Paciente,
+            model: Patient,
             key: "id",
         }
     },
-    id_profissional: {
+    id_Professional: {
         type: DataTypes.INTEGER,
         references: {
-            model: Profissional,
+            model: Professional,
             key: "id",
         }
     },
 });
 
-export default Paciente_profissional;
+export default Patient_Professional;

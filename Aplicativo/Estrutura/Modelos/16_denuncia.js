@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Usuario from "./1_usuario.js";
+import User from "./1_User.js";
 
 const Denuncia = sequelize.define('16_denuncia', {
     id: {
@@ -12,14 +12,14 @@ const Denuncia = sequelize.define('16_denuncia', {
     id_denunciador: {
         type: DataTypes.INTEGER,
         references: {
-            model: Usuario,
+            model: User,
             key: "id",
         }
     },
     id_denunciado: {
         type: DataTypes.INTEGER,
         references: {
-            model: Usuario,
+            model: User,
             key: "id",
         }
     },

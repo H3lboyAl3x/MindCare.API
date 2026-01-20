@@ -1,19 +1,19 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Profissional from "./5_profissional.js";
+import Professional from "./5_Professional.js";
 import Dia_da_semana from "./6_dia_da_semana.js"
 
-const Profissional_dia_da_semana = sequelize.define('15_profissional_dia_da_semana', {
+const Professional_dia_da_semana = sequelize.define('15_Professional_dia_da_semana', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    id_profissional: {
+    id_Professional: {
         type: DataTypes.INTEGER,
         references: {
-            model: Profissional,
+            model: Professional,
             key: "id",
         }
     },
@@ -26,4 +26,4 @@ const Profissional_dia_da_semana = sequelize.define('15_profissional_dia_da_sema
     }
 });
 
-export default Profissional_dia_da_semana;
+export default Professional_dia_da_semana;

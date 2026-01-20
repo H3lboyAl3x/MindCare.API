@@ -1,4 +1,4 @@
-import * as Repositorio from "../Repositorios/2_paciente_repositorio.js";
+import * as Repositorio from "../Repositorios/2_Patient_repositorio.js";
 
 // ===== PAGAMENTO =======================================================
 export const create_pagamento = async (data) => {

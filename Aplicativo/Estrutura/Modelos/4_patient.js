@@ -1,17 +1,17 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Usuario from "./1_usuario.js";
+import User from "./1_user.js";
 
-const Administrador = sequelize.define('3_administrador', {
+const Patient = sequelize.define('4_patient', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         references: {
-            model: Usuario,
+            model: User,
             key: 'id',
         }
     }
 });
 
-export default Administrador;
+export default Patient;

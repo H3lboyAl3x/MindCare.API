@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Usuario from "./1_usuario.js";
+import User from "./1_User.js";
 import Consulta from "./10_consulta.js"
 
 const Notificacao = sequelize.define('13_notificacao', {
@@ -28,7 +28,7 @@ const Notificacao = sequelize.define('13_notificacao', {
     id_destinatoria: {
         type: DataTypes.INTEGER,
         references: {
-            model: Usuario,
+            model: User,
             key: "id",
         }
     }

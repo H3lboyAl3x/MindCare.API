@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>API - MindCare</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; padding: 20px; max-width: 900px; margin: auto; background-color: #b0b0b0; }
+        h2 { text-align: center; color: #000000; }
+        .model-section { background: white; border-radius: 25px; margin-bottom: 20px }
+        summary { cursor: pointer; padding: 15px; color: #000000; font-weight: bold; font-size: 1.2rem; outline: none; }
+        .endpoint-card { padding: 15px; border-bottom: 2px solid #cccccc; }
+        .endpoint-card:last-child { border-bottom: none; }
+        textarea { width: 100%; height: 100px; font-family: monospace; padding: 10px; background: #272822; color: #f8f8f2; border-radius: 4px; box-sizing: border-box; }
+        .btn { padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 10px; }
+        .btn-post { background: #28a745; color: white; }
+        .btn-get { background: #007bff; color: white; }
+        .res-container { background: #2d2d2d; color: #61dafb; padding: 10px; border-radius: 4px; margin-top: 10px; font-size: 0.9rem; overflow-x: auto; min-height: 20px; }
+    </style>  
+</head>
+<body>
+
+    <h2>Gerenciador de MindCare(API)</h2>
+
+    <!-- Model of User -->
+    <details class="model-section">
+        <summary>USER</summary>
+        
+        <div class="endpoint-card">
+            <h4>POST /User (Criar Usuário + Credentiall)</h4>
+            <textarea id="json_post_User">{ "name": "exemplo", "date_of_birth": "2000-01-01", "gender": "Feminino", "status": false }</textarea>
+            <textarea id="json_post_Credential">{ "id": 1, "number": "999999999", "pass": "********" }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('User')">Executar POST</button>
+            <pre class="res-container" id="res_post_User">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /User (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('User')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_User">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /User/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_User" placeholder="ID do Usuário" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('User')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_User">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /User/:id (Atualizar Usuário + Credentiall)</h4>
+            <input type="text" id="id_put_User" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_User">{ "name": "exemplo", "day_of_birth": "2000-01-01", "gender": "Feminino", "status": false }</textarea>
+            <textarea id="json_put_Credential">{ "number": "999999999", "senha": "********" }</textarea>
+            <button class="btn btn-post" onclick="atualizar('User')">Executar PUT</button>
+            <pre class="res-container" id="res_put_User">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /User/:id (Deletar)</h4>
+            <input type="text" id="id_delete_User" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('User')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_User">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Patient -->
+    <details class="model-section">
+        <summary>PATIENT</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Patient (Criar Patient)</h4>
+            <textarea id="json_post_Patient">{ "id": "1" }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Patient')">Executar POST</button>
+            <pre class="res-container" id="res_post_Patient">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Patient (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Patient')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Patient">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Patient/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Patient" placeholder="ID do Patient" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Patient')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Patient">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Patient/:id (Atualizar Patient)</h4>
+            <input type="text" id="id_put_Patient" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Patient">{ "id": "1" }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Patient')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Patient">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Patient/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Patient" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Patient')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Patient">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <script>
+        const BASE_URL = 'http://localhost:3000/MindCare/API/';
+        async function tratarResposta(response) {
+            const text = await response.text();
+            try {
+                return text ? JSON.parse(text) : { status: "Sucesso", code: response.status };
+            } catch (e) {
+                return { mensagem: text };
+            }
+        }
+
+        // POST
+        async function enviarDados(modelo) {
+            const resDisplay = document.getElementById(`res_post_${modelo}`);
+            const bodyContent = document.getElementById(`json_post_${modelo}`).value;
+
+            try {
+                const resp1 = await fetch(BASE_URL + modelo, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: bodyContent
+                });
+                const data1 = await tratarResposta(resp1);
+
+                if (modelo === 'User') {
+                    const credContent = document.getElementById(`json_post_Credential`).value;
+                    const resp2 = await fetch(BASE_URL + 'Credential', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: credContent
+                    });
+                    const data2 = await tratarResposta(resp2);
+                    resDisplay.innerText = JSON.stringify({ User: data1, Credentiall: data2 }, null, 2);
+                } else {
+                    resDisplay.innerText = JSON.stringify(data1, null, 2);
+                }
+            } catch (err) {
+                resDisplay.innerText = "Erro: " + err.message;
+            }
+        }
+
+        // GET ALL
+        async function buscarDados(modelo) {
+            const resDisplay = document.getElementById(`res_get_${modelo}`);
+            try {
+                const response = await fetch(BASE_URL + modelo);
+                const data = await tratarResposta(response);
+                resDisplay.innerText = JSON.stringify(data, null, 2);
+            } catch (err) {
+                resDisplay.innerText = "Erro: " + err.message;
+            }
+        }
+
+        // GET BY ID
+        async function buscarUm(modelo) {
+            const id = document.getElementById(`id_get_${modelo}`).value;
+            const resDisplay = document.getElementById(`res_get_id_${modelo}`);
+            try {
+                const response = await fetch(`${BASE_URL}${modelo}/${id}`);
+                const data = await tratarResposta(response);
+                resDisplay.innerText = JSON.stringify(data, null, 2);
+            } catch (err) {
+                resDisplay.innerText = "Erro: " + err.message;
+            }
+        }
+
+        // PUT
+        async function atualizar(modelo) {
+            const id = document.getElementById(`id_put_${modelo}`).value;
+            const resDisplay = document.getElementById(`res_put_${modelo}`);
+            const bodyContent = document.getElementById(`json_put_${modelo}`).value;
+
+            try {
+                const resp1 = await fetch(`${BASE_URL}${modelo}/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: bodyContent
+                });
+                const data1 = await tratarResposta(resp1);
+
+                if (modelo === 'User') {
+                    const credContent = document.getElementById(`json_put_Credential`).value;
+                    const resp2 = await fetch(`${BASE_URL}Credential/${id}`, { // Assumindo que Credentiall usa o mesmo ID
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: credContent
+                    });
+                    const data2 = await tratarResposta(resp2);
+                    resDisplay.innerText = JSON.stringify({ update_User: data1, update_Credentiall: data2 }, null, 2);
+                } else {
+                    resDisplay.innerText = JSON.stringify(data1, null, 2);
+                }
+            } catch (err) {
+                resDisplay.innerText = "Erro: " + err.message;
+            }
+        }
+
+        // DELETE
+        async function deletar(modelo) {
+            const id = document.getElementById(`id_delete_${modelo}`).value;
+            const resDisplay = document.getElementById(`res_delete_${modelo}`);
+
+            if (!id || !confirm("Confirmar exclusão?")) return;
+
+            try {
+                if (modelo === 'User') {
+                    const respCred = await fetch(`${BASE_URL}Credential/${id}`, { method: 'DELETE' });
+                    const dataCred = await tratarResposta(respCred);
+                    const respUser = await fetch(`${BASE_URL}${modelo}/${id}`, { method: 'DELETE' });
+                    const dataUser = await tratarResposta(respUser);
+                    resDisplay.innerText = JSON.stringify({
+                        credential_delete: dataCred,
+                        user_delete: dataUser
+                    }, null, 2);
+                } else {
+                    const response = await fetch(`${BASE_URL}${modelo}/${id}`, { method: 'DELETE' });
+                    const data = await tratarResposta(response);
+                    resDisplay.innerText = JSON.stringify(data, null, 2);
+                }
+            } catch (err) {
+                resDisplay.innerText = "Erro ao deletar: " + err.message;
+            }
+        }
+    </script>
+</body>
+</html>

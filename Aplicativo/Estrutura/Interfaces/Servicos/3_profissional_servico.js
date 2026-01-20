@@ -1,4 +1,4 @@
-import * as Repositorio from "../Repositorios/3_profissional_repositorio.js";
+import * as Repositorio from "../Repositorios/3_Professional_repositorio.js";
 
 // ===== DIA_DA_SEMANA ===================================================
 export const create_dia_da_semana = async (data) => {

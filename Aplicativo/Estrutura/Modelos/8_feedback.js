@@ -1,8 +1,8 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../Configuracao/db.js";
 
-import Profissional from "./5_profissional.js";
-import Consulta from "./10_consulta.js"
+import Professional from "./5_Professional.js";
+import Consultation from "./10_consultation.js"
 
 const Feedback = sequelize.define('8_feedback', {
     id: {
@@ -10,21 +10,21 @@ const Feedback = sequelize.define('8_feedback', {
         primaryKey: true,
         autoIncrement: true
     },
-    estrela: {
+    star: {
         type: DataTypes.DECIMAL,
         allowNull: true,
     },
-    id_profissional: {
+    id_professional: {
         type: DataTypes.INTEGER,
         references: {
-            model: Profissional,
+            model: Professional,
             key: "id",
         }
     },
-    id_consulta: {
+    id_consultation: {
         type: DataTypes.INTEGER,
         references: {
-            model: Consulta,
+            model: Consultation,
             key: "id",
         }
     }
