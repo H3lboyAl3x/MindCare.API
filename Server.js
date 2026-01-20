@@ -60,6 +60,7 @@ const server = http.createServer(app);
       console.log(`--------------------\n`);
 
       try {
+        await open(localUrl);
       } catch (err) {
         console.log("Aviso: Não foi possível abrir o navegador automaticamente.");
       }
