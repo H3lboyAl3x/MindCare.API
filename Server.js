@@ -11,6 +11,9 @@ import http from "http";
 import path from "path";
 import { fileURLToPath } from "url";
 
+import open from "open";
+import os from "os";
+
 dotenv.config();
 
 const app = express();
@@ -36,9 +39,31 @@ const server = http.createServer(app);
     await sequelize.authenticate();
     console.log("Banco conectado com sucesso!");
 
-    server.listen(PORT, () => {
-      console.log(`Server is ready at http://localhost:${PORT}`);
-      console.log(`Documentação em: http://localhost:${PORT}/docs`);
+    server.listen(PORT, "0.0.0.0", async () => {
+
+      const interfaces = os.networkInterfaces();
+      let ipLocal = "localhost";
+      for (const interfaceName in interfaces) {
+        for (const iface of interfaces[interfaceName]) {
+          if (iface.family === "IPv4" && !iface.internal) {
+            ipLocal = iface.address;
+          }
+        }
+      }
+
+      const localUrl = `http://localhost:${PORT}/docs`;
+      const networkUrl = `http://${ipLocal}:${PORT}/docs`;
+
+      console.log(`\n--- Server Ready ---`);
+      console.log(`Local:   ${localUrl}`);
+      console.log(`Rede:    ${networkUrl}`);
+      console.log(`--------------------\n`);
+
+      try {
+        await open(localUrl);
+      } catch (err) {
+        console.log("Aviso: Não foi possível abrir o navegador automaticamente.");
+      }
     });
   } catch (error) {
     console.error("Falha ao conectar com banco de dados:", error);
