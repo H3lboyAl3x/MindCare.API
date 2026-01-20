@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 const sequelize = new Sequelize(
@@ -20,14 +21,18 @@ const sequelize = new Sequelize(
     }
 );
 
-export default sequelize;
-
-(async () => {
+// Sincronização inteligente
+const syncDatabase = async () => {
     try {
-        await sequelize.sync({force: true});
-        console.log("Tabelas sicronizadas");
-    }
-    catch (error){
+        const isProduction = process.env.NODE_ENV === 'production' || process.env.VERCEL;
+        
+        await sequelize.sync({ force: isProduction ? false : false }); 
+        console.log("Banco de dados sincronizado.");
+    } catch (error) {
         console.error("Erro ao sincronizar tabelas:", error);
     }
-})();
+};
+
+syncDatabase();
+
+export default sequelize;
