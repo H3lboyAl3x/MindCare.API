@@ -26,44 +26,29 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use("/docs", express.static(path.join(__dirname, "public")));
 
+
 const server = http.createServer(app);
 
-(async () => {
+const start = async () => {
   try {
     await sequelize.authenticate();
     console.log("Banco conectado com sucesso!");
 
-    if (isLocal) {
-      await sequelize.sync(); 
-      
+    if (process.env.NODE_ENV !== 'production') {
+      await sequelize.sync();
       server.listen(PORT, "0.0.0.0", async () => {
-        const interfaces = os.networkInterfaces();
-        let ipLocal = "localhost";
-        for (const name in interfaces) {
-          for (const iface of interfaces[name]) {
-            if (iface.family === "IPv4" && !iface.internal) {
-              ipLocal = iface.address;
-            }
-          }
-        }
-
-        console.log(`\n--- Server Ready (LOCAL) ---`);
-        console.log(`Local:   http://localhost:${PORT}/docs`);
-        console.log(`Rede:    http://${ipLocal}:${PORT}/docs`);
-        console.log(`--------------------\n`);
-
-        try {
-          await open(`http://localhost:${PORT}/docs`);
-        } catch (err) {
-          console.log("Aviso: Navegador não abriu automaticamente.");
-        }
+        console.log(`--- Server Ready (LOCAL) ---`);
+        console.log(`Porta: ${PORT}`);
+        try { await open(`http://localhost:${PORT}/docs`); } catch (e) {}
       });
     } else {
-      console.log("Servidor pronto para produção (Vercel)");
+      console.log("Modo Produção: Servidor pronto.");
     }
   } catch (error) {
-    console.error("Falha ao conectar:", error);
+    console.error("Erro:", error);
   }
-})();
+};
+
+start();
 
 export default app;
