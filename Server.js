@@ -1,11 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
-import sequelize from "./Aplicativo/Configuracao/db.js";
+import sequelize from "./app/config/db.js";
 
-import User_roteador from "./Aplicativo/Estrutura/Roteadores/1_user_router.js";
+import User_router from "./app/structure/router/1_User_router.js";
+import Patient_router from "./app/structure/router/2_Patient_router.js";
+import Professional_router from "./app/structure/router/3_Professional_router.js";
+import Communication_router from "./app/structure/router/4_Communication_router.js";
+import Extra_router from "./app/structure/router/5_Extra_router.js";
 
 import cors from "cors";
-import { ErrorHandler } from "./Aplicativo/Middlewares/ErrorHandler.js";
+import { ErrorHandler } from "./app/Middlewares/ErrorHandler.js";
 import http from "http";
 
 import path from "path";
@@ -23,7 +27,11 @@ app.use(cors());
 app.use(express.json());
 
 // Roteadores
-app.use("/MindCare/API", User_roteador);
+app.use("/MindCare/API", User_router);
+app.use("/MindCare/API", Patient_router);
+app.use("/MindCare/API", Professional_router);
+app.use("/MindCare/API", Communication_router);
+app.use("/MindCare/API", Extra_router);
 
 // Middleware de erros
 app.use(ErrorHandler);
@@ -41,10 +49,10 @@ const server = http.createServer(app);
 
     server.listen(PORT, "0.0.0.0", async () => {
 
-      const interfaces = os.networkInterfaces();
+      const Interface = os.networkInterfaces();
       let ipLocal = "localhost";
-      for (const interfaceName in interfaces) {
-        for (const iface of interfaces[interfaceName]) {
+      for (const interfaceName in Interface) {
+        for (const iface of Interface[interfaceName]) {
           if (iface.family === "IPv4" && !iface.internal) {
             ipLocal = iface.address;
           }

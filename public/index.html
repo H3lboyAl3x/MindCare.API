@@ -23,7 +23,7 @@
 
     <!-- Model of User -->
     <details class="model-section">
-        <summary>USER</summary>
+        <summary>User</summary>
         
         <div class="endpoint-card">
             <h4>POST /User (Criar Usuário + Credentiall)</h4>
@@ -61,7 +61,7 @@
 
     <!-- Model of Patient -->
     <details class="model-section">
-        <summary>PATIENT</summary>
+        <summary>Patient</summary>
 
         <div class="endpoint-card">
             <h4>POST /Patient (Criar Patient)</h4>
@@ -96,30 +96,30 @@
     </details>
 
     <script>
-        const BASE_URL = 'https://mindcare-api.onrender.com/MindCare/API/';
+        const BASE_URL = 'http://localhost:3000/MindCare/API/';
         async function tratarResposta(response) {
             const text = await response.text();
             try {
                 return text ? JSON.parse(text) : { status: "Sucesso", code: response.status };
             } catch (e) {
-                return { mensagem: text };
+                return { Message: text };
             }
         }
 
         // POST
-        async function enviarDados(modelo) {
-            const resDisplay = document.getElementById(`res_post_${modelo}`);
-            const bodyContent = document.getElementById(`json_post_${modelo}`).value;
+        async function enviarDados(model) {
+            const resDisplay = document.getElementById(`res_post_${model}`);
+            const bodyContent = document.getElementById(`json_post_${model}`).value;
 
             try {
-                const resp1 = await fetch(BASE_URL + modelo, {
+                const resp1 = await fetch(BASE_URL + model, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: bodyContent
                 });
                 const data1 = await tratarResposta(resp1);
 
-                if (modelo === 'User') {
+                if (model === 'User') {
                     const credContent = document.getElementById(`json_post_Credential`).value;
                     const resp2 = await fetch(BASE_URL + 'Credential', {
                         method: 'POST',
@@ -132,50 +132,50 @@
                     resDisplay.innerText = JSON.stringify(data1, null, 2);
                 }
             } catch (err) {
-                resDisplay.innerText = "Erro: " + err.message;
+                resDisplay.innerText = "Erro: " + err.Message;
             }
         }
 
         // GET ALL
-        async function buscarDados(modelo) {
-            const resDisplay = document.getElementById(`res_get_${modelo}`);
+        async function buscarDados(model) {
+            const resDisplay = document.getElementById(`res_get_${model}`);
             try {
-                const response = await fetch(BASE_URL + modelo);
+                const response = await fetch(BASE_URL + model);
                 const data = await tratarResposta(response);
                 resDisplay.innerText = JSON.stringify(data, null, 2);
             } catch (err) {
-                resDisplay.innerText = "Erro: " + err.message;
+                resDisplay.innerText = "Erro: " + err.Message;
             }
         }
 
         // GET BY ID
-        async function buscarUm(modelo) {
-            const id = document.getElementById(`id_get_${modelo}`).value;
-            const resDisplay = document.getElementById(`res_get_id_${modelo}`);
+        async function buscarUm(model) {
+            const id = document.getElementById(`id_get_${model}`).value;
+            const resDisplay = document.getElementById(`res_get_id_${model}`);
             try {
-                const response = await fetch(`${BASE_URL}${modelo}/${id}`);
+                const response = await fetch(`${BASE_URL}${model}/${id}`);
                 const data = await tratarResposta(response);
                 resDisplay.innerText = JSON.stringify(data, null, 2);
             } catch (err) {
-                resDisplay.innerText = "Erro: " + err.message;
+                resDisplay.innerText = "Erro: " + err.Message;
             }
         }
 
         // PUT
-        async function atualizar(modelo) {
-            const id = document.getElementById(`id_put_${modelo}`).value;
-            const resDisplay = document.getElementById(`res_put_${modelo}`);
-            const bodyContent = document.getElementById(`json_put_${modelo}`).value;
+        async function atualizar(model) {
+            const id = document.getElementById(`id_put_${model}`).value;
+            const resDisplay = document.getElementById(`res_put_${model}`);
+            const bodyContent = document.getElementById(`json_put_${model}`).value;
 
             try {
-                const resp1 = await fetch(`${BASE_URL}${modelo}/${id}`, {
+                const resp1 = await fetch(`${BASE_URL}${model}/${id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: bodyContent
                 });
                 const data1 = await tratarResposta(resp1);
 
-                if (modelo === 'User') {
+                if (model === 'User') {
                     const credContent = document.getElementById(`json_put_Credential`).value;
                     const resp2 = await fetch(`${BASE_URL}Credential/${id}`, { // Assumindo que Credentiall usa o mesmo ID
                         method: 'PUT',
@@ -188,34 +188,34 @@
                     resDisplay.innerText = JSON.stringify(data1, null, 2);
                 }
             } catch (err) {
-                resDisplay.innerText = "Erro: " + err.message;
+                resDisplay.innerText = "Erro: " + err.Message;
             }
         }
 
         // DELETE
-        async function deletar(modelo) {
-            const id = document.getElementById(`id_delete_${modelo}`).value;
-            const resDisplay = document.getElementById(`res_delete_${modelo}`);
+        async function deletar(model) {
+            const id = document.getElementById(`id_delete_${model}`).value;
+            const resDisplay = document.getElementById(`res_delete_${model}`);
 
             if (!id || !confirm("Confirmar exclusão?")) return;
 
             try {
-                if (modelo === 'User') {
+                if (model === 'User') {
                     const respCred = await fetch(`${BASE_URL}Credential/${id}`, { method: 'DELETE' });
                     const dataCred = await tratarResposta(respCred);
-                    const respUser = await fetch(`${BASE_URL}${modelo}/${id}`, { method: 'DELETE' });
+                    const respUser = await fetch(`${BASE_URL}${model}/${id}`, { method: 'DELETE' });
                     const dataUser = await tratarResposta(respUser);
                     resDisplay.innerText = JSON.stringify({
-                        credential_delete: dataCred,
-                        user_delete: dataUser
+                        Credential_delete: dataCred,
+                        User_delete: dataUser
                     }, null, 2);
                 } else {
-                    const response = await fetch(`${BASE_URL}${modelo}/${id}`, { method: 'DELETE' });
+                    const response = await fetch(`${BASE_URL}${model}/${id}`, { method: 'DELETE' });
                     const data = await tratarResposta(response);
                     resDisplay.innerText = JSON.stringify(data, null, 2);
                 }
             } catch (err) {
-                resDisplay.innerText = "Erro ao deletar: " + err.message;
+                resDisplay.innerText = "Erro ao deletar: " + err.Message;
             }
         }
     </script>
