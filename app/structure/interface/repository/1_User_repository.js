@@ -72,18 +72,18 @@ export const get_Adm_by_id = async (id) => {
     return await Adm.findByPk(id);
 }
 export const update_Adm = async (id, updates) => {
-    const Adm = await Adm.findByPk(id);
-    if (!Adm) {
+    const Admu = await Adm.findByPk(id);
+    if (!Admu) {
         return null;
     }
-    return await Adm.update(updates);
+    return await Admu.update(updates);
 }
 export const delete_Adm = async (id) => {
-    const Adm = await Adm.findByPk(id);
-    if (!Adm) {
+    const Admu = await Adm.findByPk(id);
+    if (!Admu) {
         return null;
     }
-    await Adm.destroy();
+    await Admu.destroy();
     return true;
 }
 
@@ -100,18 +100,18 @@ export const get_Patient_by_id = async (id) => {
     return await Patient.findByPk(id);
 }
 export const update_Patient = async (id, updates) => {
-    const Patient = await Patient.findByPk(id);
-    if (!Patient) {
+    const Patientu = await Patient.findByPk(id);
+    if (!Patientu) {
         return null;
     }
-    return await Patient.update(updates);
+    return await Patientu.update(updates);
 }
 export const delete_Patient = async (id) => {
-    const Patient = await Patient.findByPk(id);
-    if (!Patient) {
+    const Patientu = await Patient.findByPk(id);
+    if (!Patientu) {
         return null;
     }
-    await Patient.destroy();
+    await Patientu.destroy();
     return true;
 }
 
@@ -128,17 +128,17 @@ export const get_Professional_by_id = async (id) => {
     return await Professional.findByPk(id);
 }
 export const update_Professional = async (id, updates) => {
-    const Professional = await Professional.findByPk(id);
-    if (!Professional) {
+    const Professionalu = await Professional.findByPk(id);
+    if (!Professionalu) {
         return null;
     }
-    return await Professional.update(updates);
+    return await Professionalu.update(updates);
 }
 export const delete_Professional = async (id) => {
-    const Professional = await Professional.findByPk(id);
-    if (!Professional) {
+    const Professionalu = await Professional.findByPk(id);
+    if (!Professionalu) {
         return null;
     }
-    await Professional.destroy();
+    await Professionalu.destroy();
     return true;
 }

@@ -9,21 +9,21 @@ const Complaint = sequelize.define('16_Complaint', {
         primaryKey: true,
         autoIncrement: true
     },
-    id_User1: {
+    id_complainer: {
         type: DataTypes.INTEGER,
         references: {
             model: User,
             key: "id",
         }
     },
-    id_User2: {
+    id_complained: {
         type: DataTypes.INTEGER,
         references: {
             model: User,
             key: "id",
         }
     },
-    tipo: {
+    type: {
         type: DataTypes.STRING,
         allowNull: false,
     }

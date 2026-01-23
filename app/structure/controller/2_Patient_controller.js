@@ -1,53 +1,53 @@
 import * as service from "../interface/service/2_Patient_service.js";
 
-// ===== payment =======================================================
-export const get_all_payment = async (req, res) => {
+// ===== Payment =======================================================
+export const get_all_Payment = async (req, res) => {
     try {
-        const payment = await service.get_all_payment();
-        res.status(200).json(payment);
+        const Payment = await service.get_all_Payment();
+        res.status(200).json(Payment);
     } catch (error) {
         res.status(500).json({ error: error.Message });
     }
 };
 
-export const create_payment = async (req, res) => {
+export const create_Payment = async (req, res) => {
     try {
-        const newpayment = await service.create_payment(req.body);
-        res.status(201).json(newpayment);
+        const newPayment = await service.create_Payment(req.body);
+        res.status(201).json(newPayment);
     } catch (error) {
         res.status(400).json({ error: error.Message });
     }
 };
 
-export const get_payment_by_id = async (req, res) => {
+export const get_Payment_by_id = async (req, res) => {
     try {
-        const payment = await service.get_payment_by_id(req.params.id);
-        if (!payment) {
-            return res.status(404).json({ Message: 'payment não encontrado com id: ' + req.params.id });
+        const Payment = await service.get_Payment_by_id(req.params.id);
+        if (!Payment) {
+            return res.status(404).json({ Message: 'Payment não encontrado com id: ' + req.params.id });
         }
-        res.status(200).json(payment);
+        res.status(200).json(Payment);
     } catch (error) {
         res.status(500).json({ error: error.Message });
     }
 };
 
-export const update_payment = async (req, res) => {
+export const update_Payment = async (req, res) => {
     try {
-        const updatedpayment = await service.update_payment(req.params.id, req.body);
-        if (!updatedpayment) {
-            return res.status(404).json({ Message: 'payment não encontrado' });
+        const updatedPayment = await service.update_Payment(req.params.id, req.body);
+        if (!updatedPayment) {
+            return res.status(404).json({ Message: 'Payment não encontrado' });
         }
-        res.status(200).json(updatedpayment);
+        res.status(200).json(updatedPayment);
     } catch (error) {
         res.status(400).json({ error: error.Message });
     }
 };
 
-export const delete_payment = async (req, res) => {
+export const delete_Payment = async (req, res) => {
     try {
-        const deleted = await service.delete_payment(req.params.id);
+        const deleted = await service.delete_Payment(req.params.id);
         if (!deleted) {
-            return res.status(404).json({ Message: 'payment não encontrado' });
+            return res.status(404).json({ Message: 'Payment não encontrado' });
         }
         res.status(204).json();
     } catch (error) {

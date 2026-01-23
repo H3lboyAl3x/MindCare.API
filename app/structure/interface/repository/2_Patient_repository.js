@@ -1,28 +1,28 @@
 import Payment from "../../model/9_Payment.js";
 
-// ===== payment =======================================================
+// ===== Payment =======================================================
 
-export const create_payment = async (Data) => {
+export const create_Payment = async (Data) => {
     return await Payment.create(Data);
 }
-export const get_all_payment = async () => {
+export const get_all_Payment = async () => {
     return await Payment.findAll();
 }
-export const get_payment_by_id = async (id) => {
+export const get_Payment_by_id = async (id) => {
     return await Payment.findByPk(id);
 }
-export const update_payment = async (id, updates) => {
-    const payment = await Payment.findByPk(id);
-    if (!payment) {
+export const update_Payment = async (id, updates) => {
+    const Paymentu = await Payment.findByPk(id);
+    if (!Paymentu) {
         return null;
     }
-    return await payment.update(updates);
+    return await Paymentu.update(updates);
 }
-export const delete_payment = async (id) => {
-    const payment = await Payment.findByPk(id);
-    if (!payment) {
+export const delete_Payment = async (id) => {
+    const Paymentu = await Payment.findByPk(id);
+    if (!Paymentu) {
         return null;
     }
-    await payment.destroy();
+    await Paymentu.destroy();
     return true;
 }

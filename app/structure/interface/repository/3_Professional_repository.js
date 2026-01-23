@@ -14,18 +14,18 @@ export const get_Day_of_week_by_id = async (id) => {
     return await Day_of_week.findByPk(id);
 }
 export const update_Day_of_week = async (id, updates) => {
-    const Day_of_week = await Day_of_week.findByPk(id);
-    if (!Day_of_week) {
+    const Day_of_weeku = await Day_of_week.findByPk(id);
+    if (!Day_of_weeku) {
         return null;
     }
-    return await Day_of_week.update(updates);
+    return await Day_of_weeku.update(updates);
 }
 export const delete_Day_of_week = async (id) => {
-    const Day_of_week = await Day_of_week.findByPk(id);
-    if (!Day_of_week) {
+    const Day_of_weeku = await Day_of_week.findByPk(id);
+    if (!Day_of_weeku) {
         return null;
     }
-    await Day_of_week.destroy();
+    await Day_of_weeku.destroy();
     return true;
 }
 
@@ -42,18 +42,18 @@ export const get_Work_area_by_id = async (id) => {
     return await Work_area.findByPk(id);
 }
 export const update_Work_area = async (id, updates) => {
-    const Work_area = await Work_area.findByPk(id);
-    if (!Work_area) {
+    const Work_areau = await Work_area.findByPk(id);
+    if (!Work_areau) {
         return null;
     }
-    return await Work_area.update(updates);
+    return await Work_areau.update(updates);
 }
 export const delete_Work_area = async (id) => {
-    const Work_area = await Work_area.findByPk(id);
-    if (!Work_area) {
+    const Work_areau = await Work_area.findByPk(id);
+    if (!Work_areau) {
         return null;
     }
-    await Work_area.destroy();
+    await Work_areau.destroy();
     return true;
 }
 
@@ -70,17 +70,17 @@ export const get_Feedback_by_id = async (id) => {
     return await Feedback.findByPk(id);
 }
 export const update_Feedback = async (id, updates) => {
-    const Feedback = await Feedback.findByPk(id);
-    if (!Feedback) {
+    const Feedbacku = await Feedback.findByPk(id);
+    if (!Feedbacku) {
         return null;
     }
-    return await Feedback.update(updates);
+    return await Feedbacku.update(updates);
 }
 export const delete_Feedback = async (id) => {
-    const Feedback = await Feedback.findByPk(id);
-    if (!Feedback) {
+    const Feedbacku = await Feedback.findByPk(id);
+    if (!Feedbacku) {
         return null;
     }
-    await Feedback.destroy();
+    await Feedbacku.destroy();
     return true;
 }

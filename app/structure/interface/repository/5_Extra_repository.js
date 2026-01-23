@@ -15,18 +15,18 @@ export const get_Professional_Work_area_by_id = async (id) => {
     return await Professional_Work_area.findByPk(id);
 }
 export const update_Professional_Work_area = async (id, updates) => {
-    const Professional_Work_area = await Professional_Work_area.findByPk(id);
-    if (!Professional_Work_area) {
+    const Professional_Work_areau = await Professional_Work_area.findByPk(id);
+    if (!Professional_Work_areau) {
         return null;
     }
-    return await Professional_Work_area.update(updates);
+    return await Professional_Work_areau.update(updates);
 }
 export const delete_Professional_Work_area = async (id) => {
-    const Professional_Work_area = await Professional_Work_area.findByPk(id);
-    if (!Professional_Work_area) {
+    const Professional_Work_areau = await Professional_Work_area.findByPk(id);
+    if (!Professional_Work_areau) {
         return null;
     }
-    await Professional_Work_area.destroy();
+    await Professional_Work_areau.destroy();
     return true;
 }
 
@@ -43,18 +43,18 @@ export const get_Professional_Day_of_week_by_id = async (id) => {
     return await Professional_Day_of_week.findByPk(id);
 }
 export const update_Professional_Day_of_week = async (id, updates) => {
-    const Professional_Day_of_week = await Professional_Day_of_week.findByPk(id);
-    if (!Professional_Day_of_week) {
+    const Professional_Day_of_weeku = await Professional_Day_of_week.findByPk(id);
+    if (!Professional_Day_of_weeku) {
         return null;
     }
-    return await Professional_Day_of_week.update(updates);
+    return await Professional_Day_of_weeku.update(updates);
 }
 export const delete_Professional_Day_of_week = async (id) => {
-    const Professional_Day_of_week = await Professional_Day_of_week.findByPk(id);
-    if (!Professional_Day_of_week) {
+    const Professional_Day_of_weeku = await Professional_Day_of_week.findByPk(id);
+    if (!Professional_Day_of_weeku) {
         return null;
     }
-    await Professional_Day_of_week.destroy();
+    await Professional_Day_of_weeku.destroy();
     return true;
 }
 
@@ -71,18 +71,18 @@ export const get_Complaint_by_id = async (id) => {
     return await Complaint.findByPk(id);
 }
 export const update_Complaint = async (id, updates) => {
-    const Complaint = await Complaint.findByPk(id);
-    if (!Complaint) {
+    const Complaintu = await Complaint.findByPk(id);
+    if (!Complaintu) {
         return null;
     }
-    return await Complaint.update(updates);
+    return await Complaintu.update(updates);
 }
 export const delete_Complaint = async (id) => {
-    const Complaint = await Complaint.findByPk(id);
-    if (!Complaint) {
+    const Complaintu = await Complaint.findByPk(id);
+    if (!Complaintu) {
         return null;
     }
-    await Complaint.destroy();
+    await Complaintu.destroy();
     return true;
 }
 
@@ -98,17 +98,17 @@ export const get_Patient_Professional_by_id = async (id) => {
     return await Patient_Professional.findByPk(id);
 }
 export const update_Patient_Professional = async (id, updates) => {
-    const Patient_Professional = await Patient_Professional.findByPk(id);
-    if (!Patient_Professional) {
+    const Patient_Professionalu = await Patient_Professional.findByPk(id);
+    if (!Patient_Professionalu) {
         return null;
     }
-    return await Patient_Professional.update(updates);
+    return await Patient_Professionalu.update(updates);
 }
 export const delete_Patient_Professional = async (id) => {
-    const Patient_Professional = await Patient_Professional.findByPk(id);
-    if (!Patient_Professional) {
+    const Patient_Professionalu = await Patient_Professional.findByPk(id);
+    if (!Patient_Professionalu) {
         return null;
     }
-    await Patient_Professional.destroy();
+    await Patient_Professionalu.destroy();
     return true;
 }

@@ -15,18 +15,18 @@ export const get_Consultation_by_id = async (id) => {
     return await Consultation.findByPk(id);
 }
 export const update_Consultation = async (id, updates) => {
-    const Consultation = await Consultation.findByPk(id);
-    if (!Consultation) {
+    const Consultationu = await Consultation.findByPk(id);
+    if (!Consultationu) {
         return null;
     }
-    return await Consultation.update(updates);
+    return await Consultationu.update(updates);
 }
 export const delete_Consultation = async (id) => {
-    const Consultation = await Consultation.findByPk(id);
-    if (!Consultation) {
+    const Consultationu = await Consultation.findByPk(id);
+    if (!Consultationu) {
         return null;
     }
-    await Consultation.destroy();
+    await Consultationu.destroy();
     return true;
 }
 
@@ -43,18 +43,18 @@ export const get_Chat_by_id = async (id) => {
     return await Chat.findByPk(id);
 }
 export const update_Chat = async (id, updates) => {
-    const Chat = await Chat.findByPk(id);
-    if (!Chat) {
+    const Chatu = await Chat.findByPk(id);
+    if (!Chatu) {
         return null;
     }
-    return await Chat.update(updates);
+    return await Chatu.update(updates);
 }
 export const delete_Chat = async (id) => {
-    const Chat = await Chat.findByPk(id);
-    if (!Chat) {
+    const Chatu = await Chat.findByPk(id);
+    if (!Chatu) {
         return null;
     }
-    await Chat.destroy();
+    await Chatu.destroy();
     return true;
 }
 
@@ -71,18 +71,18 @@ export const get_Message_by_id = async (id) => {
     return await Message.findByPk(id);
 }
 export const update_Message = async (id, updates) => {
-    const Message = await Message.findByPk(id);
-    if (!Message) {
+    const Messageu = await Message.findByPk(id);
+    if (!Messageu) {
         return null;
     }
-    return await Message.update(updates);
+    return await Messageu.update(updates);
 }
 export const delete_Message = async (id) => {
-    const Message = await Message.findByPk(id);
-    if (!Message) {
+    const Messageu = await Message.findByPk(id);
+    if (!Messageu) {
         return null;
     }
-    await Message.destroy();
+    await Messageu.destroy();
     return true;
 }
 
@@ -99,17 +99,17 @@ export const get_Notification_by_id = async (id) => {
     return await Notification.findByPk(id);
 }
 export const update_Notification = async (id, updates) => {
-    const Notification = await Notification.findByPk(id);
-    if (!Notification) {
+    const Notificationu = await Notification.findByPk(id);
+    if (!Notificationu) {
         return null;
     }
-    return await Notification.update(updates);
+    return await Notificationu.update(updates);
 }
 export const delete_Notification = async (id) => {
-    const Notification = await Notification.findByPk(id);
-    if (!Notification) {
+    const Notificationu = await Notification.findByPk(id);
+    if (!Notificationu) {
         return null;
     }
-    await Notification.destroy();
+    await Notificationu.destroy();
     return true;
 }

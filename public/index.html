@@ -26,7 +26,7 @@
         <summary>User</summary>
         
         <div class="endpoint-card">
-            <h4>POST /User (Criar Usuário + Credentiall)</h4>
+            <h4>POST /User (Criar Usuário + Credential)</h4>
             <textarea id="json_post_User">{ "name": "exemplo", "date_of_birth": "2000-01-01", "gender": "Feminino", "status": false }</textarea>
             <textarea id="json_post_Credential">{ "id": 1, "number": "999999999", "pass": "********" }</textarea>
             <button class="btn btn-post" onclick="enviarDados('User')">Executar POST</button>
@@ -44,7 +44,7 @@
             <pre class="res-container" id="res_get_id_User">Resultado aparecerá aqui...</pre>
         </div>
         <div class="endpoint-card">
-            <h4>PUT /User/:id (Atualizar Usuário + Credentiall)</h4>
+            <h4>PUT /User/:id (Atualizar Usuário + Credential)</h4>
             <input type="text" id="id_put_User" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
             <textarea id="json_put_User">{ "name": "exemplo", "day_of_birth": "2000-01-01", "gender": "Feminino", "status": false }</textarea>
             <textarea id="json_put_Credential">{ "number": "999999999", "senha": "********" }</textarea>
@@ -56,6 +56,35 @@
             <input type="text" id="id_delete_User" placeholder="ID para deletar" style="width: 100%;">
             <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('User')">Executar DELETE</button>
             <pre class="res-container" id="res_delete_User">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Adm -->
+    <details class="model-section">
+        <summary>Adm</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Adm (Criar Adm)</h4>
+            <textarea id="json_post_Adm">{ "id": "1" }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Adm')">Executar POST</button>
+            <pre class="res-container" id="res_post_Adm">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Adm (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Adm')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Adm">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Adm/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Adm" placeholder="ID do Adm" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Adm')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Adm">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Adm/:id (Adm)</h4>
+            <input type="text" id="id_delete_Adm" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Adm')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Adm">Resposta aparecerá aqui...</pre>
         </div>
     </details>
 
@@ -81,17 +110,478 @@
             <pre class="res-container" id="res_get_id_Patient">Resultado aparecerá aqui...</pre>
         </div>
         <div class="endpoint-card">
-            <h4>PUT /Patient/:id (Atualizar Patient)</h4>
-            <input type="text" id="id_put_Patient" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
-            <textarea id="json_put_Patient">{ "id": "1" }</textarea>
-            <button class="btn btn-post" onclick="atualizar('Patient')">Executar PUT</button>
-            <pre class="res-container" id="res_put_Patient">Resposta aparecerá aqui...</pre>
-        </div>
-        <div class="endpoint-card">
             <h4>DELETE /Patient/:id (Deletar)</h4>
             <input type="text" id="id_delete_Patient" placeholder="ID para deletar" style="width: 100%;">
             <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Patient')">Executar DELETE</button>
             <pre class="res-container" id="res_delete_Patient">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Professional -->
+    <details class="model-section">
+        <summary>Professional</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Professional (Criar Professional)</h4>
+            <textarea id="json_post_Professional">{ "id": "1", "nif": "000000000LA000", "experience": 5, "star": 4.5 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Professional')">Executar POST</button>
+            <pre class="res-container" id="res_post_Professional">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Professional (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Professional')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Professional">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Professional/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Professional" placeholder="ID do Professional" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Professional')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Professional">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Professional/:id (Atualizar Professional)</h4>
+            <input type="text" id="id_put_Professional" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Professional">{ "id": "1", "nif": "000000000LA000", "experience": 5, "star": 4.5 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Professional')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Professional">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Professional/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Professional" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Professional')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Professional">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Day_of_week-->
+    <details class="model-section">
+        <summary>Day_of_week</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Day_of_week (Criar Day_of_week)</h4>
+            <textarea id="json_post_Day_of_week">{ "day": "segunda-feira" }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Day_of_week')">Executar POST</button>
+            <pre class="res-container" id="res_post_Day_of_week">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Day_of_week (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Day_of_week')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Day_of_week">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Day_of_week/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Day_of_week" placeholder="ID do Day_of_week" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Day_of_week')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Day_of_week">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Day_of_week/:id (Atualizar Day_of_week)</h4>
+            <input type="text" id="id_put_Day_of_week" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Day_of_week">{ "day": "segunda-feira" }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Day_of_week')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Day_of_week">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Day_of_week/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Day_of_week" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Day_of_week')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Day_of_week">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Work_area-->
+    <details class="model-section">
+        <summary>Work_area</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Work_area (Criar Work_area)</h4>
+            <textarea id="json_post_Work_area">{ "area": "Psicologia educacional" }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Work_area')">Executar POST</button>
+            <pre class="res-container" id="res_post_Work_area">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Work_area (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Work_area')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Work_area">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Work_area/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Work_area" placeholder="ID do Work_area" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Work_area')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Work_area">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Work_area/:id (Atualizar Work_area)</h4>
+            <input type="text" id="id_put_Work_area" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Work_area">{ "area": "Psicologia educacional" }<</textarea>
+            <button class="btn btn-post" onclick="atualizar('Work_area')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Work_area">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Work_area/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Work_area" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Work_area')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Work_area">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Feedback -->
+    <details class="model-section">
+        <summary>Feedback</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Feedback (Criar Feedback)</h4>
+            <textarea id="json_post_Feedback">{ "star": 2.5, "id_Professional": 1, "id_Consultation": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Feedback')">Executar POST</button>
+            <pre class="res-container" id="res_post_Feedback">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Feedback (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Feedback')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Feedback">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Feedback/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Feedback" placeholder="ID do Feedback" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Feedback')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Feedback">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Feedback/:id (Atualizar Feedback)</h4>
+            <input type="text" id="id_put_Feedback" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Feedback">{ "star": 2.5, "id_Professional": 1, "id_Consultation": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Feedback')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Feedback">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Feedback/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Feedback" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Feedback')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Feedback">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+    
+    <!-- Model of Payment -->
+    <details class="model-section">
+        <summary>Payment</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Payment (Criar Payment)</h4>
+            <textarea id="json_post_Payment">{ "value": 20000.00, "session": 2, "type": "sessao", "id_Patient": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Payment')">Executar POST</button>
+            <pre class="res-container" id="res_post_Payment">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Payment (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Payment')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Payment">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Payment/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Payment" placeholder="ID do Payment" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Payment')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Payment">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Payment/:id (Atualizar Payment)</h4>
+            <input type="text" id="id_put_Payment" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Payment">{ "value": 20000.00, "session": 2, "type": "sessao", "id_Patient": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Payment')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Payment">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Payment/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Payment" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Payment')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Payment">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Consultation -->
+    <details class="model-section">
+        <summary>Consultation</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Consultation (Criar Consultation)</h4>
+            <textarea id="json_post_Consultation">{ "date": "2026-12-12", "hour": "15:30", "link": "jitsimeet.com", "status": true, "id_Patient": 1, "id_Professional": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Consultation')">Executar POST</button>
+            <pre class="res-container" id="res_post_Consultation">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Consultation (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Consultation')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Consultation">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Consultation/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Consultation" placeholder="ID do Consultation" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Consultation')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Consultation">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Consultation/:id (Atualizar Consultation)</h4>
+            <input type="text" id="id_put_Consultation" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Consultation">{ "date": "2026-12-12", "hour": "15:30", "link": "jitsimeet.com", "status": true, "id_Patient": 1, "id_Professional": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Consultation')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Consultation">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Consultation/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Consultation" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Consultation')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Consultation">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Chat -->
+    <details class="model-section">
+        <summary>Chat</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Chat (Criar Chat)</h4>
+            <textarea id="json_post_Chat">{ "id_Patient": 1, "id_Professional": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Chat')">Executar POST</button>
+            <pre class="res-container" id="res_post_Chat">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Chat (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Chat')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Chat">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Chat/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Chat" placeholder="ID do Chat" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Chat')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Chat">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Chat/:id (Atualizar Chat)</h4>
+            <input type="text" id="id_put_Chat" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Chat">{ "id_Patient": 1, "id_Professional": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Chat')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Chat">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Chat/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Chat" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Chat')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Chat">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Message -->
+    <details class="model-section">
+        <summary>Message</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Message (Criar Message)</h4>
+            <textarea id="json_post_Message">{ "date": "2026-12-12", "hour": "15:30", "content": "jitsimeet.com", "status": true, "id_sender": 1, "id_recipient": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Message')">Executar POST</button>
+            <pre class="res-container" id="res_post_Message">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Message (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Message')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Message">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Message/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Message" placeholder="ID do Message" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Message')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Message">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Message/:id (Atualizar Message)</h4>
+            <input type="text" id="id_put_Message" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Message">{ "date": "2026-12-12", "hour": "15:30", "content": "jitsimeet.com", "status": true, "id_sender": 1, "id_recipient": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Message')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Message">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Message/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Message" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Message')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Message">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Notification -->
+    <details class="model-section">
+        <summary>Notification</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Notification (Criar Notification)</h4>
+            <textarea id="json_post_Notification">{ "date": "2026-12-12", "hour": "15:30", "id_Consultation": 1, "id_recipient": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Notification')">Executar POST</button>
+            <pre class="res-container" id="res_post_Notification">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Notification (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Notification')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Notification">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Notification/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Notification" placeholder="ID do Notification" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Notification')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Notification">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Notification/:id (Atualizar Notification)</h4>
+            <input type="text" id="id_put_Notification" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Notification">{ "date": "2026-12-12", "hour": "15:30", "id_Consultation": 1, "id_recipient": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Notification')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Notification">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Notification/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Notification" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Notification')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Notification">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Professional_Work_area -->
+    <details class="model-section">
+        <summary>Professional_Work_area</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Professional_Work_area (Criar Professional_Work_area)</h4>
+            <textarea id="json_post_Professional_Work_area">{ "id_Professional": 1, "id_Work_area": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Professional_Work_area')">Executar POST</button>
+            <pre class="res-container" id="res_post_Professional_Work_area">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Professional_Work_area (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Professional_Work_area')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Professional_Work_area">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Professional_Work_area/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Professional_Work_area" placeholder="ID do Professional_Work_area" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Professional_Work_area')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Professional_Work_area">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Professional_Work_area/:id (Atualizar Professional_Work_area)</h4>
+            <input type="text" id="id_put_Professional_Work_area" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Professional_Work_area">{ "id_Professional": 1, "id_Work_area": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Professional_Work_area')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Professional_Work_area">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Professional_Work_area/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Professional_Work_area" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Professional_Work_area')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Professional_Work_area">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Professional_Day_of_week -->
+    <details class="model-section">
+        <summary>Professional_Day_of_week</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Professional_Day_of_week (Criar Professional_Day_of_week)</h4>
+            <textarea id="json_post_Professional_Day_of_week">{ "id_Professional": 1, "id_Day_of_week": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Professional_Day_of_week')">Executar POST</button>
+            <pre class="res-container" id="res_post_Professional_Day_of_week">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Professional_Day_of_week (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Professional_Day_of_week')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Professional_Day_of_week">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Professional_Day_of_week/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Professional_Day_of_week" placeholder="ID do Professional_Day_of_week" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Professional_Day_of_week')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Professional_Day_of_week">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Professional_Day_of_week/:id (Atualizar Professional_Day_of_week)</h4>
+            <input type="text" id="id_put_Professional_Day_of_week" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Professional_Day_of_week">{ "id_Professional": 1, "id_Day_of_week": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Professional_Day_of_week')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Professional_Day_of_week">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Professional_Day_of_week/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Professional_Day_of_week" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Professional_Day_of_week')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Professional_Day_of_week">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Complaint -->
+    <details class="model-section">
+        <summary>Complaint</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Complaint (Criar Complaint)</h4>
+            <textarea id="json_post_Complaint">{ "id_complainer": 1, "id_complained": 1, "type": "abuso" }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Complaint')">Executar POST</button>
+            <pre class="res-container" id="res_post_Complaint">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Complaint (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Complaint')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Complaint">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Complaint/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Complaint" placeholder="ID do Complaint" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Complaint')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Complaint">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Complaint/:id (Atualizar Complaint)</h4>
+            <input type="text" id="id_put_Complaint" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Complaint">{ "id_complainer": 1, "id_complained": 1, "type": "abuso" }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Complaint')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Complaint">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Complaint/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Complaint" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Complaint')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Complaint">Resposta aparecerá aqui...</pre>
+        </div>
+    </details>
+
+    <!-- Model of Patient_Professional -->
+    <details class="model-section">
+        <summary>Patient_Professional</summary>
+
+        <div class="endpoint-card">
+            <h4>POST /Patient_Professional (Criar Patient_Professional)</h4>
+            <textarea id="json_post_Patient_Professional">{ "id_Patient": 1, "id_Professional": 1 }</textarea>
+            <button class="btn btn-post" onclick="enviarDados('Patient_Professional')">Executar POST</button>
+            <pre class="res-container" id="res_post_Patient_Professional">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Patient_Professional (Listar Todos)</h4>
+            <button class="btn btn-get" onclick="buscarDados('Patient_Professional')">Executar GET ALL</button>
+            <pre class="res-container" id="res_get_Patient_Professional">Lista aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>GET /Patient_Professional/:id (Buscar Um)</h4>
+            <input type="text" id="id_get_Patient_Professional" placeholder="ID do Patient_Professional" style="width: 100%; margin-bottom: 5px;">
+            <button class="btn btn-get" onclick="buscarUm('Patient_Professional')">Executar GET</button>
+            <pre class="res-container" id="res_get_id_Patient_Professional">Resultado aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>PUT /Patient_Professional/:id (Atualizar Patient_Professional)</h4>
+            <input type="text" id="id_put_Patient_Professional" placeholder="ID para atualizar" style="width: 100%; margin-bottom: 5px;">
+            <textarea id="json_put_Patient_Professional">{ "id_Patient": 1, "id_Professional": 1 }</textarea>
+            <button class="btn btn-post" onclick="atualizar('Patient_Professional')">Executar PUT</button>
+            <pre class="res-container" id="res_put_Patient_Professional">Resposta aparecerá aqui...</pre>
+        </div>
+        <div class="endpoint-card">
+            <h4>DELETE /Patient_Professional/:id (Deletar)</h4>
+            <input type="text" id="id_delete_Patient_Professional" placeholder="ID para deletar" style="width: 100%;">
+            <button class="btn" style="background: #dc3545; color: white;" onclick="deletar('Patient_Professional')">Executar DELETE</button>
+            <pre class="res-container" id="res_delete_Patient_Professional">Resposta aparecerá aqui...</pre>
         </div>
     </details>
 

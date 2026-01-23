@@ -3,7 +3,7 @@ import sequelize from "../../config/db.js";
 
 import Patient from "./4_Patient.js";
 
-const Payment = sequelize.define('9_payment', {
+const Payment = sequelize.define('9_Payment', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -19,10 +19,6 @@ const Payment = sequelize.define('9_payment', {
     },
     type: {
         type: DataTypes.STRING,
-        allowNull: false,
-    },
-    status: {
-        type: DataTypes.BOOLEAN,
         allowNull: false,
     },
     id_Patient: {
